@@ -6,6 +6,8 @@ otp_release:
 services:
   - cassandra
 before_script:
+  - mysql -u root -e "CREATE DATABASE cloudi_tests;"
+  - mysql -u root -e "CREATE USER 'cloudi_tests'@'localhost' IDENTIFIED BY 'cloudi_tests'; GRANT ALL ON cloudi_tests.* TO cloudi_tests;"
   - rebar get-deps
 script: rebar compile ct suites=cloudi_service_db_mysql || ( cat logs/raw.log logs/ct_run*/cloudi.log && exit 1 )
 after_script:
