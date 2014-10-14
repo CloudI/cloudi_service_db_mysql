@@ -3,8 +3,6 @@ otp_release:
   - 17.0
   - R16B03-1
   - R16B
-services:
-  - cassandra
 before_script:
   - mysql -u root -e "CREATE DATABASE cloudi_tests;"
   - mysql -u root -e "CREATE USER 'cloudi_tests'@'localhost' IDENTIFIED BY 'cloudi_tests'; GRANT ALL ON cloudi_tests.* TO cloudi_tests;"
