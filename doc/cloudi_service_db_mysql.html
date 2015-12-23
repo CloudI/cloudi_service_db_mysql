@@ -14,7 +14,7 @@
    <h3><a name="CloudI_MySQL_Data_Module">CloudI MySQL Data Module</a></h3>.
 <p>Copyright © 2009-2014 Michael Truog</p>
 
-<p><b>Version:</b> 1.5.0 Apr 12 2015 21:25:35
+<p><b>Version:</b> 1.5.0 Dec 23 2015 15:15:55
   ------------------------------------------------------------------------</p>
 <p><b>Behaviours:</b> <a href="deps/cloudi_core/doc/cloudi_service.html"><tt>cloudi_service</tt></a>.</p>
 <p><b>Authors:</b> Michael Truog (<a href="mailto:mjtruog [at] gmail (dot) com"><tt>mjtruog [at] gmail (dot) com</tt></a>).</p>
@@ -36,8 +36,8 @@
 <p><tt>count() = non_neg_integer()</tt></p>
 
 
-<h3 class="typedecl"><a name="type-external_response">external_response()</a></h3>
-<p><tt>external_response(Result) = {{ok, Result}, NewAgent::<a href="#type-agent">agent()</a>} | {{error, <a href="deps/cloudi_core/doc/cloudi.html#type-error_reason_sync">cloudi:error_reason_sync()</a>}, NewAgent::<a href="#type-agent">agent()</a>}</tt></p>
+<h3 class="typedecl"><a name="type-module_response">module_response()</a></h3>
+<p><tt>module_response(Result) = {{ok, Result}, NewAgent::<a href="#type-agent">agent()</a>} | {{error, <a href="deps/cloudi_core/doc/cloudi.html#type-error_reason_sync">cloudi:error_reason_sync()</a>}, NewAgent::<a href="#type-agent">agent()</a>}</tt></p>
 
 
 <h3 class="typedecl"><a name="type-rows">rows()</a></h3>
@@ -105,76 +105,76 @@
 
 <h3 class="function"><a name="equery-4">equery/4</a></h3>
 <div class="spec">
-<p><tt>equery(Agent::<a href="#type-agent">agent()</a>, Name::<a href="#type-service_name">service_name()</a>, Query::string() | binary(), Parameters::list()) -&gt; <a href="#type-external_response">external_response</a>(any())</tt><br></p>
+<p><tt>equery(Agent::<a href="#type-agent">agent()</a>, Name::<a href="#type-service_name">service_name()</a>, Query::string() | binary(), Parameters::list()) -&gt; <a href="#type-module_response">module_response</a>(any())</tt><br></p>
 </div><p>
   <h4><a name="Perform_an_extended_SQL_query_that_does_string_substitution_with_'?'s.">Perform an extended SQL query that does string substitution with '?'s.</a></h4>
 </p>
 
 <h3 class="function"><a name="equery-5">equery/5</a></h3>
 <div class="spec">
-<p><tt>equery(Agent::<a href="#type-agent">agent()</a>, Name::<a href="#type-service_name">service_name()</a>, Query::string() | binary(), Parameters::list(), Timeout::<a href="#type-timeout_milliseconds">timeout_milliseconds()</a>) -&gt; <a href="#type-external_response">external_response</a>(any())</tt><br></p>
+<p><tt>equery(Agent::<a href="#type-agent">agent()</a>, Name::<a href="#type-service_name">service_name()</a>, Query::string() | binary(), Parameters::list(), Timeout::<a href="#type-timeout_milliseconds">timeout_milliseconds()</a>) -&gt; <a href="#type-module_response">module_response</a>(any())</tt><br></p>
 </div><p>
   <h4><a name="Perform_an_extended_SQL_query_that_does_string_substitution_with_'?'s_using_a_timeout.">Perform an extended SQL query that does string substitution with '?'s using a timeout.</a></h4>
 </p>
 
 <h3 class="function"><a name="execute_query-4">execute_query/4</a></h3>
 <div class="spec">
-<p><tt>execute_query(Agent::<a href="#type-agent">agent()</a>, Name::<a href="#type-service_name">service_name()</a>, Identifier::atom(), Arguments::list()) -&gt; <a href="#type-external_response">external_response</a>(any())</tt><br></p>
+<p><tt>execute_query(Agent::<a href="#type-agent">agent()</a>, Name::<a href="#type-service_name">service_name()</a>, Identifier::atom(), Arguments::list()) -&gt; <a href="#type-module_response">module_response</a>(any())</tt><br></p>
 </div><p>
   <h4><a name="Execute_a_query_that_has_already_been_prepared.">Execute a query that has already been prepared.</a></h4>
 </p>
 
 <h3 class="function"><a name="execute_query-5">execute_query/5</a></h3>
 <div class="spec">
-<p><tt>execute_query(Agent::<a href="#type-agent">agent()</a>, Name::<a href="#type-service_name">service_name()</a>, Identifier::atom(), Arguments::list(), Timeout::<a href="#type-timeout_milliseconds">timeout_milliseconds()</a>) -&gt; <a href="#type-external_response">external_response</a>(any())</tt><br></p>
+<p><tt>execute_query(Agent::<a href="#type-agent">agent()</a>, Name::<a href="#type-service_name">service_name()</a>, Identifier::atom(), Arguments::list(), Timeout::<a href="#type-timeout_milliseconds">timeout_milliseconds()</a>) -&gt; <a href="#type-module_response">module_response</a>(any())</tt><br></p>
 </div><p>
   <h4><a name="Execute_a_query_that_has_already_been_prepared_with_a_timeout.">Execute a query that has already been prepared with a timeout.</a></h4>
 </p>
 
 <h3 class="function"><a name="prepare_query-4">prepare_query/4</a></h3>
 <div class="spec">
-<p><tt>prepare_query(Agent::<a href="#type-agent">agent()</a>, Name::<a href="#type-service_name">service_name()</a>, Identifier::atom(), Query::string() | binary()) -&gt; <a href="#type-external_response">external_response</a>(ok)</tt><br></p>
+<p><tt>prepare_query(Agent::<a href="#type-agent">agent()</a>, Name::<a href="#type-service_name">service_name()</a>, Identifier::atom(), Query::string() | binary()) -&gt; <a href="#type-module_response">module_response</a>(ok)</tt><br></p>
 </div><p>
   <h4><a name="Prepare_a_query_with_'?'s_for_dynamic_values.">Prepare a query with '?'s for dynamic values.</a></h4>
   The query can be used in the future with the supplied Identifier atom.</p>
 
 <h3 class="function"><a name="prepare_query-5">prepare_query/5</a></h3>
 <div class="spec">
-<p><tt>prepare_query(Agent::<a href="#type-agent">agent()</a>, Name::<a href="#type-service_name">service_name()</a>, Identifier::atom(), Query::string() | binary(), Timeout::<a href="#type-timeout_milliseconds">timeout_milliseconds()</a>) -&gt; <a href="#type-external_response">external_response</a>(ok)</tt><br></p>
+<p><tt>prepare_query(Agent::<a href="#type-agent">agent()</a>, Name::<a href="#type-service_name">service_name()</a>, Identifier::atom(), Query::string() | binary(), Timeout::<a href="#type-timeout_milliseconds">timeout_milliseconds()</a>) -&gt; <a href="#type-module_response">module_response</a>(ok)</tt><br></p>
 </div><p>
   <h4><a name="Prepare_a_query_with_'?'s_for_dynamic_values_using_a_timeout.">Prepare a query with '?'s for dynamic values using a timeout.</a></h4>
   The query can be used in the future with the supplied Identifier atom.</p>
 
 <h3 class="function"><a name="squery-3">squery/3</a></h3>
 <div class="spec">
-<p><tt>squery(Agent::<a href="#type-agent">agent()</a>, Name::<a href="#type-service_name">service_name()</a>, Query::string() | binary()) -&gt; <a href="#type-external_response">external_response</a>(any())</tt><br></p>
+<p><tt>squery(Agent::<a href="#type-agent">agent()</a>, Name::<a href="#type-service_name">service_name()</a>, Query::string() | binary()) -&gt; <a href="#type-module_response">module_response</a>(any())</tt><br></p>
 </div><p>
   <h4><a name="Perform_a_simple_SQL_string_query.">Perform a simple SQL string query.</a></h4>
 </p>
 
 <h3 class="function"><a name="squery-4">squery/4</a></h3>
 <div class="spec">
-<p><tt>squery(Agent::<a href="#type-agent">agent()</a>, Name::<a href="#type-service_name">service_name()</a>, Query::string() | binary(), Timeout::<a href="#type-timeout_milliseconds">timeout_milliseconds()</a>) -&gt; <a href="#type-external_response">external_response</a>(any())</tt><br></p>
+<p><tt>squery(Agent::<a href="#type-agent">agent()</a>, Name::<a href="#type-service_name">service_name()</a>, Query::string() | binary(), Timeout::<a href="#type-timeout_milliseconds">timeout_milliseconds()</a>) -&gt; <a href="#type-module_response">module_response</a>(any())</tt><br></p>
 </div><p>
   <h4><a name="Perform_a_simple_SQL_string_query_with_a_timeout.">Perform a simple SQL string query with a timeout.</a></h4>
 </p>
 
 <h3 class="function"><a name="transaction-3">transaction/3</a></h3>
 <div class="spec">
-<p><tt>transaction(Agent::<a href="#type-agent">agent()</a>, Name::<a href="#type-service_name">service_name()</a>, QueryList::[string() | binary()]) -&gt; <a href="#type-external_response">external_response</a>(ok | {error, any()})</tt><br></p>
+<p><tt>transaction(Agent::<a href="#type-agent">agent()</a>, Name::<a href="#type-service_name">service_name()</a>, QueryList::[string() | binary()]) -&gt; <a href="#type-module_response">module_response</a>(ok | {error, any()})</tt><br></p>
 </div><p>
   <h4><a name="A_list_of_SQL_simple_query_for_a_transaction.">A list of SQL simple query for a transaction.</a></h4>
 </p>
 
 <h3 class="function"><a name="transaction-4">transaction/4</a></h3>
 <div class="spec">
-<p><tt>transaction(Agent::<a href="#type-agent">agent()</a>, Name::<a href="#type-service_name">service_name()</a>, QueryList::[string() | binary()], Timeout::<a href="#type-timeout_milliseconds">timeout_milliseconds()</a>) -&gt; <a href="#type-external_response">external_response</a>(ok | {error, any()})</tt><br></p>
+<p><tt>transaction(Agent::<a href="#type-agent">agent()</a>, Name::<a href="#type-service_name">service_name()</a>, QueryList::[string() | binary()], Timeout::<a href="#type-timeout_milliseconds">timeout_milliseconds()</a>) -&gt; <a href="#type-module_response">module_response</a>(ok | {error, any()})</tt><br></p>
 </div><p>
   <h4><a name="A_list_of_SQL_simple_query_for_a_transaction_with_a_timeout.">A list of SQL simple query for a transaction with a timeout.</a></h4>
 </p>
 <hr>
 
 <div class="navbar"><a name="#navbar_bottom"></a><table width="100%" border="0" cellspacing="0" cellpadding="2" summary="navigation bar"><tr><td><a href="overview-summary.html" target="overviewFrame">Overview</a></td><td><a href="http://www.erlang.org/"><img src="erlang.png" align="right" border="0" alt="erlang logo"></a></td></tr></table></div>
-<p><i>Generated by EDoc, Apr 12 2015, 21:25:35.</i></p>
+<p><i>Generated by EDoc, Dec 23 2015, 15:15:55.</i></p>
 </body>
 </html>
