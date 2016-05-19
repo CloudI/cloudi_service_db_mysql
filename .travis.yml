@@ -1,7 +1,7 @@
 language: erlang
 otp_release:
+  - 18.2.1
   - 17.5
-  - R16B
 before_script:
   - mysql -u root -e "CREATE DATABASE cloudi_tests;"
   - mysql -u root -e "CREATE USER 'cloudi_tests'@'localhost' IDENTIFIED BY 'cloudi_tests'; GRANT ALL ON cloudi_tests.* TO cloudi_tests;"
