@@ -28,7 +28,7 @@ defmodule CloudIServiceDbMysql do
     [files: ~w(src doc test rebar.config README.markdown),
      maintainers: ["Michael Truog"],
      licenses: ["MIT"],
-     links: %{"Website" => "http://cloudi.org",
+     links: %{"Website" => "https://cloudi.org",
               "GitHub" => "https://github.com/CloudI/" <>
                           "cloudi_service_db_mysql"}]
    end
