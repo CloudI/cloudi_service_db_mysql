@@ -6,8 +6,24 @@ defmodule CloudIServiceDbMysql do
 
   def project do
     [app: :cloudi_service_db_mysql,
-     version: "1.7.3",
+     version: "1.7.4",
      language: :erlang,
+     erlc_options: [
+       {:d, :erlang.list_to_atom('ERLANG_OTP_VERSION_' ++ :erlang.system_info(:otp_release))},
+       :debug_info,
+       :warnings_as_errors,
+       :strict_validation,
+       :warn_bif_clash,
+       :warn_deprecated_function,
+       :warn_export_all,
+       :warn_export_vars,
+       :warn_exported_vars,
+       :warn_obsolete_guard,
+       :warn_shadow_vars,
+       :warn_unused_import,
+       :warn_unused_function,
+       :warn_unused_record,
+       :warn_unused_vars],
      description: description(),
      package: package(),
      deps: deps()]
@@ -17,7 +33,7 @@ defmodule CloudIServiceDbMysql do
     [{:emysql,
       [git: "https://github.com/okeuday/emysql.git",
        branch: "v0.4.2_CloudI"]},
-     {:cloudi_core, "~> 1.7.3"}]
+     {:cloudi_core, "~> 1.7.4"}]
   end
 
   defp description do
