@@ -1,11 +1,11 @@
 language: erlang
-services:
-  - mysql
 otp_release:
   - 22.1
   - 21.3
   - 20.3
   - 19.3
+services:
+  - mysql
 before_script:
   - mysql -u root -e "CREATE DATABASE cloudi_tests;"
   - mysql -u root -e "CREATE USER 'cloudi_tests'@'localhost' IDENTIFIED BY 'cloudi_tests'; GRANT ALL ON cloudi_tests.* TO cloudi_tests IDENTIFIED BY 'cloudi_tests';"
