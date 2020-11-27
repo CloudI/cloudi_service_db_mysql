@@ -6,7 +6,7 @@ defmodule CloudIServiceDbMysql do
 
   def project do
     [app: :cloudi_service_db_mysql,
-     version: "2.0.0",
+     version: "2.0.1",
      language: :erlang,
      erlc_options: [
        {:d, :erlang.list_to_atom('ERLANG_OTP_VERSION_' ++ :erlang.system_info(:otp_release))},
@@ -33,7 +33,7 @@ defmodule CloudIServiceDbMysql do
     [{:emysql,
       [git: "https://github.com/okeuday/emysql.git",
        branch: "v0.4.2_CloudI"]},
-     {:cloudi_core, "~> 2.0.0"}]
+     {:cloudi_core, "~> 2.0.1"}]
   end
 
   defp description do
@@ -41,7 +41,7 @@ defmodule CloudIServiceDbMysql do
   end
 
   defp package do
-    [files: ~w(src doc test rebar.config README.markdown),
+    [files: ~w(src doc test rebar.config README.markdown LICENSE),
      maintainers: ["Michael Truog"],
      licenses: ["MIT"],
      links: %{"Website" => "https://cloudi.org",

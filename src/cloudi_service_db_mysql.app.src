@@ -3,7 +3,7 @@
 
 {application, cloudi_service_db_mysql, 
   [{description, "MySQL CloudI Service"},
-   {vsn, "2.0.0"},
+   {vsn, "2.0.1"},
    {modules, [
         cloudi_service_db_mysql
         ]},
