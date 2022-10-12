@@ -1,4 +1,4 @@
-[![Build Status](https://secure.travis-ci.org/CloudI/cloudi_service_db_mysql.png?branch=master)](http://travis-ci.org/CloudI/cloudi_service_db_mysql)
+[![Build Status](https://app.travis-ci.com/CloudI/cloudi_service_db_mysql.svg?branch=master)](https://app.travis-ci.com/CloudI/cloudi_service_db_mysql)
 [![hex.pm version](https://img.shields.io/hexpm/v/cloudi_service_db_mysql.svg)](https://hex.pm/packages/cloudi_service_db_mysql)
 
 If you are looking to see if you need this repository, please refer to the [`cloudi_core` repository](https://github.com/CloudI/cloudi_core#about).
