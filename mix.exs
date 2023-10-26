@@ -6,7 +6,7 @@ defmodule CloudIServiceDbMysql do
 
   def project do
     [app: :cloudi_service_db_mysql,
-     version: "2.0.6",
+     version: "2.0.7",
      language: :erlang,
      erlc_options: [
        {:d, :erlang.list_to_atom('ERLANG_OTP_VERSION_' ++ :erlang.system_info(:otp_release))},
@@ -25,7 +25,7 @@ defmodule CloudIServiceDbMysql do
     [{:emysql,
       [git: "https://github.com/okeuday/emysql.git",
        branch: "v0.4.2_CloudI"]},
-     {:cloudi_core, ">= 2.0.6"}]
+     {:cloudi_core, ">= 2.0.7"}]
   end
 
   defp description do
